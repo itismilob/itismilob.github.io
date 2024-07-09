@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Markdown 마크다운.md",
+                "file": "2017-10-08-hello-world.md",
                 "mode": "preview",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Markdown 마크다운.md",
+                "file": "2017-10-08-hello-world.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Markdown 마크다운.md",
+                "file": "2017-10-08-hello-world.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Markdown 마크다운.md"
+                "file": "2017-10-08-hello-world.md"
               }
             }
           }
@@ -148,6 +148,6 @@
   },
   "active": "d3af7d9589c8fbff",
   "lastOpenFiles": [
-    "Markdown 마크다운.md"
+    "2017-10-08-hello-world.md"
   ]
 }
