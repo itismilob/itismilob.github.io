@@ -13,7 +13,7 @@ description: Web Developer from Somewhere
 #
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Glazed-Donut.jpg/220px-Glazed-Donut.jpg
+avatar: https://media.istockphoto.com/id/459396345/ko/%EC%82%AC%EC%A7%84/%ED%83%80%EC%BD%94.jpg?s=612x612&w=0&k=20&c=jCegNwXKOV9xcxQXTvxFJu_VH4cl9Ph5YM9z9-QWPMU=
 
 # Tabs in header. There are 'Blog', 'About', 'Archive', 'Tags'
 # and URL Link(e.g. 'Theme' tab below) tabs. If you don't need one, just delete
@@ -89,7 +89,7 @@ kramdown:
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     # Use existing pygments syntax highlighting css
-    css_class: "highlight"
+    css_class: 'highlight'
 
 # Set the Sass partials directory, as we're using @imports
 sass:
