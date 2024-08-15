@@ -21,7 +21,12 @@ layout: default
     </ul>
   </div>
 
-  {% include toc.html html=content %}
+  <details class="index">
+    <summary>
+      <h2>목차</h2>
+    </summary>
+      {% include toc.html html=content %}
+  </details>
 
   <div class="entry">
     {{ content }}
