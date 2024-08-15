@@ -5,6 +5,7 @@ tags:
   - Typescript
 comments: true
 ---
+Typescript 특징, 타입 정리
 
 ## Typescript
 
