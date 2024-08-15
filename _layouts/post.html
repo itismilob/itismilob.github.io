@@ -5,7 +5,7 @@ layout: default
 <div class="post-container">
 <article class="post">
 
-    <h1>{{ page.title }}</h1>
+    <h1 class="post-title">{{ page.title }}</h1>
 
     <div>
       <span class="date">
@@ -26,7 +26,7 @@ layout: default
 
     <h6>{{ page.summary }}</h6>
 
-    <div class="entry">
+    <div class="entry post-content">
       {{ content }}
     </div>
 
@@ -67,7 +67,7 @@ layout: default
   function getHeaderNodes(master) {
     var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
     var headerNodes = nodes.filter(function(elem) {
-        return elem.tagName == "h1" || elem.tagName == "h2" || elem.tagName == "h3" || elem.tagName == "h4" || elem.tagName == "h5" || elem.tagName == "h6";
+        return elem.tagName == "H1" || elem.tagName == "H2" || elem.tagName == "H3" || elem.tagName == "H4" || elem.tagName == "H5" || elem.tagName == "H6";
     });
     return headerNodes;
   }
@@ -75,7 +75,7 @@ layout: default
   var title = document.getElementsByClassName("post-title")[0];
   var titleY = window.pageYOffset + title.getBoundingClientRect().top;
   
-  var article = document.getElementsByClassName("post-article")[0];
+  var article = document.getElementsByClassName("post-content")[0];
   var articleY = window.pageYOffset + article.getBoundingClientRect().top;
 
   var toc = document.getElementsByClassName("toc")[0];
@@ -86,13 +86,6 @@ layout: default
   var before = undefined;
 
   document.addEventListener('scroll', function(e) {
-    if (window.scrollY >= articleY-60) {
-      toc.style.cssText = "position: fixed; top: 60px;";
-    }
-    else {
-      toc.style.cssText = "";
-    }
-
     var current = headerNodes.filter(function(header) {
       var headerY = window.pageYOffset + header.getBoundingClientRect().top;
       return window.scrollY >= headerY - 60;
@@ -115,6 +108,7 @@ layout: default
         }
 
         currentA.classList.add("toc-active");
+        console.log("active");
       }
       else {
         if (before) 

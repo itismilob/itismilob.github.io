@@ -9,7 +9,7 @@ comments: true
 
 ---
 
-### Typescript의 특징
+## Typescript의 특징
 
 > Typescript = Javascript + Type
 >
@@ -20,7 +20,7 @@ comments: true
 - Strongly typed(강타입) 언어이다.
 - Javascript의 문법을 그대로 사용한다.
 
-### Typescript의 작동방식
+## Typescript의 작동방식
 
 - 코드를 작성하면서 바로바로 타입 에러를 검사해준다.
 - Typescript는 Javascript로 컴파일해서 브라우저 등에서 사용된다.

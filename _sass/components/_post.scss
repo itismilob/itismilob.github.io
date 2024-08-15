@@ -7,13 +7,16 @@
   .post{
     width: 100%;
 
-    h2, h3{
+    h2, h3, h4{
       padding: 0 10px;
       border-radius: 10px;
       border-bottom: 1px solid #dee2e6;
     }
     h2{
       margin-top: 50px;
+    }
+    h3{
+      margin-top: 20px;
     }
 
   }
@@ -34,11 +37,11 @@
     padding-top : 10px;
     top:50px;
     position: sticky;
-    right: 0px;
     width: 240px;
     overflow-y: auto;
     overflow-x: hidden;
     font-size: 0.7rem;
+    margin-bottom: 50px;
   
     // display: none;
     // @media (min-width: 75em){
@@ -58,7 +61,7 @@
       font-weight: bold; 
       transition: all 0.125s ease-in 0s; 
       font-size: 0.75rem;
-      color: red;
+      // color: black;
     }
   
     ul {
