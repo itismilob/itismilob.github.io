@@ -26,8 +26,9 @@ body {
 
 .container {
   margin: 0 auto;
-  max-width: 740px;
-  padding: 0 10px;
+  // max-width: 740px;
+  max-width: 1300px;
+  padding: 0 100px;
   width: 100%;
 }
 
@@ -616,3 +617,4 @@ footer {
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import 'highlights';
+@import 'components/post';
