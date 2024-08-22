@@ -1,10 +1,12 @@
 ---
 layout: post
-title:Typescript 2
+title: Typescript 2
 tags:
   - Typescript
 comments: true
 ---
+
+함수에서 타입을 사용하는 방법 정리
 
 ## Functions
 > 함수에서 타입을 사용하는 방법이다.
