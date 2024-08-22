@@ -3,10 +3,11 @@ layout: post
 title: Typescript 2
 tags:
   - Typescript
+summary: 함수에서 타입을 사용하는 방법 정리
 comments: true
 ---
 
-함수에서 타입을 사용하는 방법 정리
+
 
 ## Functions
 > 함수에서 타입을 사용하는 방법이다.
