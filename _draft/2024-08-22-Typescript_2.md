@@ -1,7 +1,6 @@
-
 ---
 layout: post
-title: 
+title:Typescript 2
 tags:
   - Info
 comments: true
