@@ -1,13 +1,12 @@
 ---
 layout: post
-title: Typescript
+title: Typescript 1
 tags:
   - Typescript
 summary: Typescript 특징, 타입 정리
 comments: true
 ---
 
----
 
 ## Typescript의 특징
 
@@ -20,11 +19,16 @@ comments: true
 - Strongly typed(강타입) 언어이다.
 - Javascript의 문법을 그대로 사용한다.
 
+---
+
 ## Typescript의 작동방식
 
 - 코드를 작성하면서 바로바로 타입 에러를 검사해준다.
 - Typescript는 Javascript로 컴파일해서 브라우저 등에서 사용된다.
 - 컴파일 중에 버그를 발견한 경우 Javascript로 변환되지 않는다.
+
+---
+
 
 ## 타입 선택하기
 
@@ -44,6 +48,9 @@ let a: string = "hello";
 let b: string = false; // 타입 에러
 ```
 
+
+---
+
 ### 타입 정의
 
 > 객체나 함수의 타입 등을 정의해서 사용한다.
@@ -57,6 +64,9 @@ const foo: {
   grade: 2,
 };
 ```
+
+
+---
 
 ### 타입 별칭 (Type Alias)
 
@@ -78,9 +88,15 @@ const foo: Student = {
 };
 ```
 
+
+---
+
 ### 타입 종류
 
 > Typescript에는 다양한 종류의 타입이 있으며 타입을 새로 선언하여 사용할 수 있다.
+
+
+---
 
 #### 원시 타입
 
@@ -90,9 +106,15 @@ const foo: Student = {
 - string : 문자
 - boolean : true / false
 
+
+---
+
 #### 배열
 
 - array : 타입 뒤에 `[]`를 붙인다 (`number[]`, `string[]`, ...)
+
+
+---
 
 #### 옵셔널 타입 (Optional Type)
 
@@ -113,6 +135,9 @@ const foo: Student = {
 };
 ```
 
+
+---
+
 #### 함수 타입
 
 > 함수를 정의할 때 매개변수와 반환값의 타입을 정한다.
@@ -131,6 +156,9 @@ const playerMaker2 = (name: string): Player => ({ name });
 const foo = playerMaker("foo");
 ```
 
+
+---
+
 #### 읽기 전용 타입 (Readonly)
 
 > 값을 수정하지 못하고 읽기만 가능한 타입이다.
@@ -148,6 +176,9 @@ const numbers: readonly number[] = [1, 2, 3];
 numbers.push(4); // 타입 에러
 ```
 
+
+---
+
 #### 튜플 타입 (Tuple)
 
 > 튜플은 배열의 서브타입으로 크기와 타입이 고정된 배열이다.
@@ -158,15 +189,24 @@ player = [1, "foo", true]; // 에러 (순서가 맞지 않음)
 player = ["foo", 1, 0]; // 에러 (타입이 맞지 않음)
 ```
 
+
+---
+
 #### null, undefined
 
 - null : 빈 값
 - undefined : 초기화되지 않은 값
 
+
+---
+
 #### any
 
 > Typescript의 보호에서 빠져나오기 위해 사용한다.
 > 어떤 값이든 타입 검사 오류가 발생하지 않는다.
+
+
+---
 
 #### unknown
 
@@ -183,6 +223,9 @@ if(typeof a === 'number'){
 }
 ```
 
+
+---
+
 #### void
 
 > 반환값이 없는 함수에서 사용한다.
@@ -193,6 +236,9 @@ function hello(): void {
   console.log("hello");
 }
 ```
+
+
+---
 
 #### never
 
@@ -215,3 +261,6 @@ function makeError(): never {
   throw new Error("message");
 }
 ```
+
+
+---
