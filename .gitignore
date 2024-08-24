@@ -7,4 +7,5 @@ _site
 .sass-cache
 node_modules
 package.json
-/.obsidian
+/.obsidian/plugins
+/.obsidian/*.json

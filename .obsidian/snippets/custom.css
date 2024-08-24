@@ -1,0 +1,115 @@
+:root {
+  --purple-background: rgba(165, 124, 255, 0.2);
+  --purple-color: rgb(179, 144, 255);
+}
+
+/* highlight */
+.cm-s-obsidian span.cm-formatting-highlight,
+.cm-s-obsidian span.cm-highlight {
+  background-color: var(--purple-background) !important;
+  color: var(--purple-color) !important;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* highlight */
+/* bold */
+.cm-strong,
+strong {
+  color: var(--purple-color) !important;
+}
+
+/* mark */
+mark {
+  background-color: var(--purple-background) !important;
+  color: var(--purple-color) !important;
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+/* highlight */
+
+/* header */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.HyperMD-header-1,
+.HyperMD-header-2,
+.HyperMD-header-3,
+.HyperMD-header-4,
+.HyperMD-header-5,
+.HyperMD-header-6 {
+  border-bottom: 1px solid white;
+  /* box-shadow: 0 10px 10px -10px white; */
+  border-radius: 5px;
+  padding: 5px;
+}
+.HyperMD-header-2,
+h2 {
+  /* background-color: #343434; */
+  box-shadow: 0 10px 10px -10px white;
+}
+
+h2:hover {
+  background-color: var(--purple-background) !important;
+}
+
+/* navigation */
+.tree-item-self.is-clickable.nav-file-title.is-active {
+  background-color: var(--purple-background) !important;
+  color: var(--purple-color) !important;
+}
+
+/* inline code block */
+code {
+  background-color: #151515;
+}
+/* code block */
+.cm-hmd-codeblock.cm-keyword,
+.cm-hmd-codeblock.cm-type {
+  color: rgb(255, 207, 124) !important;
+}
+.token.punctuation {
+  color: rgba(255, 255, 255, 0.439) !important;
+}
+.token.operator,
+.cm-hmd-codeblock.cm-operator {
+  color: rgb(108, 130, 255) !important;
+}
+.token.string,
+.token.char,
+.cm-hmd-codeblock.cm-string,
+.cm-hmd-codeblock.cm-char {
+  color: rgb(172, 121, 255) !important;
+}
+.token.class-name,
+.token.keyword,
+.cm-keyword {
+  color: rgb(255, 146, 139) !important;
+}
+.code-styler-line-text,
+.token.variable,
+.cm-variable,
+.cm-hmd-codeblock.cm-variable {
+  color: white !important;
+}
+.token.function,
+.token.builtin,
+.token.directive-hash,
+.cm-def.cm-hmd-codeblock {
+  color: rgb(104, 132, 255) !important;
+}
+
+/* image */
+.internal-embed.media-embed.image-embed.is-loaded {
+  padding: 20px;
+  display: flex;
+}
+.internal-embed.media-embed.image-embed.is-loaded > img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+}
