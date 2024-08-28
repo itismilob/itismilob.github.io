@@ -52,7 +52,7 @@ private : 자신을 제외한 자식 클래스나, 인스턴스에서 접근할 
 
 
 ```typescript
-class User{
+class User {
 	constructor(
 		public name:string,
 		protected age:number,
@@ -60,7 +60,7 @@ class User{
 	){}
 }
 
-class UserA extends User{
+class UserA extends User {
 	constructor(name, age, id){
 		super(name, age, id);
 		console.log(this.name); // 참조 가능
@@ -76,13 +76,34 @@ console.log(a.age); // 참조 불가능
 console.log(a.id); // 참조 불가능
 ```
 
+
+### 정적 속성, 메소드 (Static)
+
+> 클래스의 인스턴트를 생성하지 않고 속성, 메소드를 사용하기 위해 static 키워드를 사용한다.
+
+```typescript
+class WorldMap {
+    // 정적 속성
+    static mapSize:number = 50;
+    
+    // 정적 메소드
+    static resizeMap(size:number):void{
+        this.mapSize = size;
+    }
+}
+
+WorldMap.resizeMap(20);
+console.log(WorldMap.mapSize);
+```
+
+
 ### 추상 클래스 (Abstract class)
 
 > 클래스를 동일하게 만들어내기 위한 설계도가 추상 클래스이다.
 > 추상 클래스를 상속받은 클래스를 만들어 사용해야 하고, 직접 새로운 인스턴스를 만들지는 못한다.
 
 ```typescript
-abstract class User{
+abstract class User {
 	constructor(
 		public name:string,
 		protected age:number,
@@ -121,19 +142,21 @@ const a = new UserA("aaa", 20, 393920);
 
 ### 클래스 사용 예시
 
-> 클래스 자체를 타입으로 사용할 수 있다.
-> Dictonary를 만들 때 key와 value의 타입을 정할 수 있다.
+> 클래스를 이용하여 단어와 정의로 이루어진 사전을 만드는 예시다.
+
 
 ```typescript
+// 오브젝트 타입을 만들 때 key와 value의 타입을 정할 수 있다. → dictonary
 type Words = {
 	// [key의 타입 ('key'가 아닌 어떤 문자가 와도 상관 없음)] : value의 타입
-	[key:string]:string // string:string 타입의 key:value 만 들어갈 수 있다.
+	[key:string]:string
 }
 
-// 단어-정의 가 나열된 사전 클래스
+// 단어와 정의를 저장하는 사전 클래스
 class Dict {
 	private words:Words = {};
 
+	// 클래스를 타입으로 사용할 수 있다.
 	addWord(word:Word){
 		if(this.words[word.term] === undefined){ // 사전에 단어가 정의되지 않은 경우
 			this.words[word.term] = word.def;
@@ -153,15 +176,11 @@ class Word {
 }
 
 const dict = new Dict();
-const kimchi = new Word("kimchi", "food");
+const Typescript = new Word("Typescript", "TypeScript is JavaScript with syntax for types.");
 
-dict.addWord(kimchi);
-console.log(dict.getWord("kimchi"));
-
+dict.addWord(Typescript);
+console.log(dict.getWord("Typescript"));
 ```
-
-클래스를 타입으로 사용
-
 
 
 ## Interface
