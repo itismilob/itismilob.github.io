@@ -183,6 +183,82 @@ console.log(dict.getWord("Typescript"));
 ```
 
 
-## Interface
+## 인터페이스 (Interface)
+
+> 오브젝트의 형태를 정의하는 목적으로 타입 대신에 사용한다.
+
+```typescript
+type Person = {
+	name:string,
+	age:number
+}
+
+interface Person {
+	name:string,
+	age:number
+}
+// 위의 두 코드는 같은 기능을 한다.
+
+interface Name = string; // interface는 오브젝트만 정의할 수 있다.
+```
+
+> 인터페이스를 상속 받아 확장하여 사용할 수 있다.
+
+```typescript
+// interface를 사용한 방식
+interface User {
+	name:string
+}
+interface Player extends User {
+	age:number
+}
+
+// type을 사용한 방식
+type User = {
+	name:string
+}
+type Player = User & {
+	age:number
+}
+```
+
+> 같은 이름의 인터페이스는 자동으로 하나로 합쳐진다.
+
+```typescript
+interface User{
+	name:string
+}
+interface User{
+	age:number
+}
+
+const foo:User = {
+	name:"foo",
+	age:20
+}
+```
+
+> 인터페이스는 자바스크립트 코드로 변환되지 않는다.
+> 클래스가 인터페이스를 상속받아 사용한다. 
+> 인터페이스를 상속받은 클래스는 private, protected 를 사용하지 못한다.
+
+``` typescript
+interface User {
+	firstName:string,
+	lastName:string,
+	fullName():string
+}
+
+class Player implements User {
+	constructor(
+		public firstName:string,
+		public lastName:string
+	){}
+	
+	fullName(){
+		return `${this.firstName} ${this.lastName}`;
+	}
+}
+```
 
 ## Polymorphism
