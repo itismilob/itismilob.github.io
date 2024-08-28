@@ -82,7 +82,7 @@ console.log(a.id); // 참조 불가능
 > 추상 클래스를 상속받은 클래스를 만들어 사용해야 하고, 직접 새로운 인스턴스를 만들지는 못한다.
 
 ```typescript
-absctact class User{
+abstract class User{
 	constructor(
 		public name:string,
 		protected age:number,
@@ -96,17 +96,17 @@ const a = new UserA("aaa", 20, 393920);
 const b = new User("bbb", 20, 148993); // 직접 인스턴스 생성 불가
 ```
 
-> 추상 클래스에 정의된추상 메소드는 **call signiture**를 정의하고 몸체는 구현하지 않는다.
+> 추상 클래스에 정의된 추상 메소드는 **call signiture**를 정의하고 몸체는 구현하지 않는다.
 > 추상 메소드는 상속받은 클래스에서 **반드시 정의**해야 한다.
 
 ```typescript
-absctact class User{
+abstract class User{
 	constructor(
 		public name:string,
 		protected age:number,
 		private id:number
 	){}
-	getUserName():string
+	abstract getUserName():string
 }
 
 class UserA extends User{
@@ -117,6 +117,52 @@ class UserA extends User{
 
 const a = new UserA("aaa", 20, 393920);
 ```
+
+
+### 클래스 사용 예시
+
+> 클래스 자체를 타입으로 사용할 수 있다.
+> Dictonary를 만들 때 key와 value의 타입을 정할 수 있다.
+
+```typescript
+type Words = {
+	// [key의 타입 ('key'가 아닌 어떤 문자가 와도 상관 없음)] : value의 타입
+	[key:string]:string // string:string 타입의 key:value 만 들어갈 수 있다.
+}
+
+// 단어-정의 가 나열된 사전 클래스
+class Dict {
+	private words:Words = {};
+
+	addWord(word:Word){
+		if(this.words[word.term] === undefined){ // 사전에 단어가 정의되지 않은 경우
+			this.words[word.term] = word.def;
+		}
+	}
+	getWord(term:string){
+		return this.words[term];
+	}
+}
+
+// 사전에 들어가는 단어 클래스
+class Word {
+	constructor(
+		public term:string,
+		public def:string
+	){}
+}
+
+const dict = new Dict();
+const kimchi = new Word("kimchi", "food");
+
+dict.addWord(kimchi);
+console.log(dict.getWord("kimchi"));
+
+```
+
+클래스를 타입으로 사용
+
+
 
 ## Interface
 
