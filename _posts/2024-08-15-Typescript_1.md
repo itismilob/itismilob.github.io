@@ -3,7 +3,7 @@ layout: post
 title: Typescript 1
 tags:
   - Typescript
-summary: Typescript 특징, 타입 정리
+summary: Typescript 특징, 타입
 comments: true
 ---
 

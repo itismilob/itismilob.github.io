@@ -3,12 +3,13 @@ layout: post
 title: Typescript 3
 tags:
   - Typescript
+summary: 객체 지향 프로그래밍 (Object-Oriented-Programing)
 comments: true
 ---
 
 ## Class
 
-> 
+> 여러개의 Object를 쉽게 만들기 위한 Class라는 설계도를 작성해 사용한다.
 
 ```typescript
 class User{
@@ -16,14 +17,14 @@ class User{
 		private name:string,
 		private age:number
 	){
-		//Typescript에서는 this로 값을 연결해주지 않아도 된다.
+		//Typescript에서는 this로 값을 연결해주지 않아도 자동으로 만들어준다.
 	}
 }
 ```
 
 메소드 : 클래스 안에 구현된 함수
 
-인스턴스 instence
+인스턴스 instence : 클래스로 만들어진 오브젝트를 인스턴스 라고 부른다.
 
 ### 접근 제한자 (Access modifier)
 
