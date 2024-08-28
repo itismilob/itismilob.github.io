@@ -9,18 +9,31 @@ comments: true
 
 ## Class
 
-> 여러개의 Object를 쉽게 만들기 위한 Class라는 설계도를 작성해 사용한다.
-
-```typescript
+```javascript
 class User{
-	constructor(
-		private name:string,
-		private age:number
-	){
-		//Typescript에서는 this로 값을 연결해주지 않아도 자동으로 만들어준다.
+	constructor(name, age){
+		this.name = name;
+		this.age = age;
 	}
 }
 ```
+
+```typescript
+class User{
+	private name:string; // this로 변수를 참조하기 위해서는 먼저 선언해주어야 한다.
+	constructor(
+		name:string,
+		private age:number // 멤버 변수를 자동으로 추가해준다.
+	){
+		this.name = name; // 이미 선언된 변수를 수정하는 방식
+		// this.age = age; → this.age 변수가 없어서 에러 발생
+	}
+}
+```
+
+<->
+
+!important 
 
 메소드 : 클래스 안에 구현된 함수
 
