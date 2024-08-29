@@ -36,6 +36,8 @@ class User{
 }
 ```
 
+---
+
 
 
 ### 접근 제한자 (Access modifier)
@@ -61,7 +63,7 @@ class User {
 }
 
 class UserA extends User {
-	constructor(name, age, id){
+	constructor(name:string, age:number, id:number){
 		super(name, age, id);
 		console.log(this.name); // 참조 가능
 		console.log(this.age); // 참조 가능
@@ -75,6 +77,8 @@ console.log(a.name); // 참조 가능
 console.log(a.age); // 참조 불가능
 console.log(a.id); // 참조 불가능
 ```
+
+---
 
 
 ### 정적 속성, 메소드 (Static)
@@ -96,6 +100,8 @@ WorldMap.resizeMap(20);
 console.log(WorldMap.mapSize);
 ```
 
+---
+
 
 ## 추상 클래스 (Abstract class)
 
@@ -116,6 +122,8 @@ class UserA extends User{}
 const a = new UserA("aaa", 20, 393920);
 const b = new User("bbb", 20, 148993); // 직접 인스턴스 생성 불가
 ```
+
+---
 
 > 추상 클래스에 정의된 추상 메소드는 **call signiture**를 정의하고 몸체는 구현하지 않는다.
 > 추상 메소드는 상속받은 클래스에서 **반드시 정의**해야 한다.
@@ -140,11 +148,11 @@ const a = new UserA("aaa", 20, 393920);
 ```
 
 
+---
+
 ## 클래스 사용 예시
 
 > 클래스를 이용하여 단어와 정의로 이루어진 사전을 만드는 예시다.
-
-
 ```typescript
 // 오브젝트 타입을 만들 때 key와 value의 타입을 정할 수 있다. → dictonary
 type Words = {
@@ -182,10 +190,13 @@ dict.addWord(Typescript);
 console.log(dict.getWord("Typescript"));
 ```
 
+---
+
 
 ## 인터페이스 (Interface)
 
 > 오브젝트의 형태를 정의하는 목적으로 타입 대신에 사용한다.
+> 모든 인터페이스의 기능은 타입을 사용해해도 구현할 수 있다.
 
 ```typescript
 type Person = {
@@ -202,41 +213,7 @@ interface Person {
 interface Name = string; // 에러 interface는 오브젝트만 정의할 수 있다.
 ```
 
-> 인터페이스를 상속 받아 확장하여 사용할 수 있다.
-
-```typescript
-// interface를 사용한 방식
-interface User {
-	name:string
-}
-interface Player extends User {
-	age:number
-}
-
-// type을 사용한 방식
-type User = {
-	name:string
-}
-type Player = User & {
-	age:number
-}
-```
-
-> 같은 이름의 인터페이스는 자동으로 하나로 합쳐진다.
-
-```typescript
-interface User{
-	name:string
-}
-interface User{
-	age:number
-}
-
-const foo:User = {
-	name:"foo",
-	age:20
-}
-```
+---
 
 > 클래스가 인터페이스를 상속받아 사용할 수 있다.
 > 인터페이스를 상속받은 클래스는 private, protected 를 사용하지 못한다.
@@ -260,13 +237,68 @@ class Player implements User {
 }
 ```
 
+---
+
+### 타입과 인터페이스의 차이
+
+> 기존에 타입에 값을 추가하기 위해서는 새로운 타입을 만들어 & 연산자로 타입을 추가해야 한다.
+> 인터페이스는 기존 인터페이스에 추가하거나 상속 받아 확장하여 사용할 수 있다.
+
+``` typescript
+// 타입에 갑을 추가하는 방법
+type PlayerA {
+	name:string
+}
+type PlayerAA = PlayerA & {
+	lastName:string
+}
+const a:PlayerAA = {
+	name:"a",
+	lastName:"A"
+}
+
+// 인터페이스에 값을 추가하거나 상속받는 방법
+interface PlayerB {
+	name:string
+}
+interface PlayerB { // 자동으로 인터페이스가 합쳐진다.
+	firstName:string
+}
+interface PlayerBB extends PlayerB{
+	lastName:string
+}
+const b:PlayerBB = {
+	name:"b",
+	firstName:"B",
+	lastName:"B"
+}
+```
+
+---
+
+#### 타입을 여러개 사용하는 경우
+
+> `|` 는 or 연산자로 여러개의 타입 중 하나를 의미한다.
+> `&` 는 and 연산자로 여러개의 타입 모두를 의미한다.
+
+``` typescript
+type Status = "success" | "fail" | "error";
+const s = "fail";
+const s = "not fail" // 타입 에러
+
+type A = {name:string};
+type B = A & {age:number};
+const b:B = {name:"bbb", age:111};
+```
+
 ### 추상화와 인터페이스의 차이
 
 > 추상 클래스는 컴파일 시 일반 클래스로 변환된다.
 > 인터페이스는 자바스크립트 코드로 변환되지 않고 사라진다.
-> 사용하지 않는 추상 클래스를 남기지 않고 클래스의 형태를 정하기만 할 때 인터페이스를 사용한다.
+> 추상 클래스를 남기지 않고 클래스의 형태를 정하기만 할 때 인터페이스를 사용한다.
 
 ``` typescript
+// 추상 클래스를 이용한 방법 (컴파일 시 User 클래스가 남는다.)
 abstract class User {
 	constructor(
 		public name:string
@@ -275,7 +307,7 @@ abstract class User {
 }
 class Player extends User {...}
 
-// 위의 추상 클래스를 아래의 인터페이스로 정의할 수 있다.
+// 인터페이스를 이용한 방법 (컴파일 시 Player 클래스만 남는다.)
 interface User {
 	public name:string,
 	getName():string
@@ -283,5 +315,39 @@ interface User {
 class Player implements User {...}
 ```
 
+---
 
-## Polymorphism
+## 다양성 (Polymorphism)
+
+> 인터페이스와 클래스에서 제네릭을 적용하는 방법이다.
+> LocalStorage에서 타입 T를 제네릭으로 받아서 전달한다.
+
+``` typescript
+interface SStorage<T> {
+	[key:string]:T
+}
+
+class LocalStorage<T> {
+	private storage:SStorage<T> = {}
+	set(key:string, value:T){
+		this.storage[key] = value;
+	}
+	remove(key:string){
+		delete this.storage[key];
+	}
+	get(key:string):T{
+		return this.storage[key];
+	}
+	clear(){
+		this.storage = {};
+	}
+}
+
+const stringsStorage = new LocalStorage<string>();
+stringsStorage.set("1","first");
+
+const booleanStorage = new LocalStorage<boolean>();
+booleanStorage.set("false", false);
+```
+
+---
