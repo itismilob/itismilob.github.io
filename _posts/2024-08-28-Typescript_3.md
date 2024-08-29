@@ -91,13 +91,13 @@ console.log(a.id); // 참조 불가능
 
 ```typescript
 class WorldMap {
-    // 정적 속성
-    static mapSize:number = 50;
-    
-    // 정적 메소드
-    static resizeMap(size:number):void{
-        this.mapSize = size;
-    }
+    // 정적 속성
+    static mapSize:number = 50;
+
+    // 정적 메소드
+    static resizeMap(size:number):void{
+        this.mapSize = size;
+    }
 }
 
 WorldMap.resizeMap(20);
