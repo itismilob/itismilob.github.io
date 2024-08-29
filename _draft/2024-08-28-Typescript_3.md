@@ -238,8 +238,7 @@ const foo:User = {
 }
 ```
 
-> 인터페이스는 자바스크립트 코드로 변환되지 않는다.
-> 클래스가 인터페이스를 상속받아 사용한다. 
+> 클래스가 인터페이스를 상속받아 사용할 수 있다.
 > 인터페이스를 상속받은 클래스는 private, protected 를 사용하지 못한다.
 
 ``` typescript
@@ -260,5 +259,31 @@ class Player implements User {
 	}
 }
 ```
+
+#### 추상화와 인터페이스의 차이
+
+> 추상 클래스는 컴파일 시 일반 클래스로 변환된다.
+> 인터페이스는 자바스크립트 코드로 변환되지 않고 사라진다.
+> 사용하지 않는 추상 클래스를 남기지 않고 클래스의 형태를 정하고 싶을 때 인터페이스를 사용한다.
+
+
+``` typescript
+abstract class User {
+	constructor(
+		name:string
+	){}
+	getName():string
+}
+
+class Player extends User {...}
+
+// 위의 추상 클래스를 아래의 인터페이스로 정의할 수 있다.
+interface User {
+	name:string,
+	getName():string
+}
+
+```
+
 
 ## Polymorphism
