@@ -97,7 +97,7 @@ console.log(WorldMap.mapSize);
 ```
 
 
-### 추상 클래스 (Abstract class)
+## 추상 클래스 (Abstract class)
 
 > 클래스를 동일하게 만들어내기 위한 설계도가 추상 클래스이다.
 > 추상 클래스를 상속받은 클래스를 만들어 사용해야 하고, 직접 새로운 인스턴스를 만들지는 못한다.
@@ -140,7 +140,7 @@ const a = new UserA("aaa", 20, 393920);
 ```
 
 
-### 클래스 사용 예시
+## 클래스 사용 예시
 
 > 클래스를 이용하여 단어와 정의로 이루어진 사전을 만드는 예시다.
 
@@ -199,7 +199,7 @@ interface Person {
 }
 // 위의 두 코드는 같은 기능을 한다.
 
-interface Name = string; // interface는 오브젝트만 정의할 수 있다.
+interface Name = string; // 에러 interface는 오브젝트만 정의할 수 있다.
 ```
 
 > 인터페이스를 상속 받아 확장하여 사용할 수 있다.
@@ -260,29 +260,27 @@ class Player implements User {
 }
 ```
 
-#### 추상화와 인터페이스의 차이
+### 추상화와 인터페이스의 차이
 
 > 추상 클래스는 컴파일 시 일반 클래스로 변환된다.
 > 인터페이스는 자바스크립트 코드로 변환되지 않고 사라진다.
-> 사용하지 않는 추상 클래스를 남기지 않고 클래스의 형태를 정하고 싶을 때 인터페이스를 사용한다.
-
+> 사용하지 않는 추상 클래스를 남기지 않고 클래스의 형태를 정하기만 할 때 인터페이스를 사용한다.
 
 ``` typescript
 abstract class User {
 	constructor(
-		name:string
+		public name:string
 	){}
 	getName():string
 }
-
 class Player extends User {...}
 
 // 위의 추상 클래스를 아래의 인터페이스로 정의할 수 있다.
 interface User {
-	name:string,
+	public name:string,
 	getName():string
 }
-
+class Player implements User {...}
 ```
 
 
