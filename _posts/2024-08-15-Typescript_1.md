@@ -13,6 +13,7 @@ comments: true
 > Typescript = Javascript + Type
 >
 > Javascript에서는 배열 + 문자 등과 같이 불가능한 코드도 가능해서 런타임 에러를 발생시킨다.
+> 
 > Typescript는 타입을 설정해서 타입 안정성 있는 코드를 작성할 수 있기 때문에 버그를 줄이고 생산성을 높일 수 있다.
 
 - Javascript의 슈퍼셋(Superset) 언어이다.
@@ -33,6 +34,7 @@ comments: true
 ## 타입 선택하기
 
 > 타입 추론 (Type Inference)
+> 
 > 타입을 명시하지 않고 변수를 선언하는 경우 선언된 값에 따라 자동으로 타입이 결정된다.
 
 ```typescript
@@ -41,6 +43,7 @@ a = 6; // 타입 에러
 ```
 
 > 타입 명시 (Type Annotations)
+> 
 > 변수명 뒤에 `: type`을 붙여서 타입을 직접 설정한다.
 
 ```typescript
@@ -119,6 +122,7 @@ const foo: Student = {
 #### 옵셔널 타입 (Optional Type)
 
 > 값이 있을 수도, 없을 수도 있는 변수를 저장하기 위해 사용한다.
+> 
 > 해당 변수의 타입은 `타입 | undefined`가 된다.
 
 ```typescript
@@ -141,6 +145,7 @@ const foo: Student = {
 #### 함수 타입
 
 > 함수를 정의할 때 매개변수와 반환값의 타입을 정한다.
+> 
 > `function foo(매개변수:타입):반환타입{...}`
 
 ```typescript
@@ -203,6 +208,7 @@ player = ["foo", 1, 0]; // 에러 (타입이 맞지 않음)
 #### any
 
 > Typescript의 보호에서 빠져나오기 위해 사용한다.
+> 
 > 어떤 값이든 타입 검사 오류가 발생하지 않는다.
 
 
@@ -211,6 +217,7 @@ player = ["foo", 1, 0]; // 에러 (타입이 맞지 않음)
 #### unknown
 
 > 해당 값이 어떤 타입일지 모르는 경우에 사용한다.
+> 
 > if 문을 사용하여 타입을 확인하고 변수를 사용해야 한다.
 
 ```typescript
@@ -229,6 +236,7 @@ if(typeof a === 'number'){
 #### void
 
 > 반환값이 없는 함수에서 사용한다.
+> 
 > 보통 따로 명시하지 않아도 된다.
 
 ```typescript
@@ -243,6 +251,7 @@ function hello(): void {
 #### never
 
 > 절대 값이 할당되지 않아야 하는 타입이다.
+> 
 > **오류를 발생** 시키거나 함수에서 **절대 반환하지 않아야 하는 반환 타입**으로 사용한다.
 
 ```typescript
