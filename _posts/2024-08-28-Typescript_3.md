@@ -257,7 +257,7 @@ class Player implements User {
 
 ``` typescript
 // 타입에 갑을 추가하는 방법
-type PlayerA {
+type PlayerA = {
 	name:string
 }
 type PlayerAA = PlayerA & {
