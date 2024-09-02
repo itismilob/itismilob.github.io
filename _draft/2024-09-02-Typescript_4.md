@@ -21,7 +21,8 @@ comments: true
 	- `allowJs` : Typescript에서 Javascript를 import해 사용할 수 있는지 지정한다.
 
 
-```json
+```json title="tsconfig.json"
+// tsconfig.json
 {
   "include": ["src"],
   "compilerOptions": {
@@ -37,14 +38,16 @@ comments: true
 
 > `package.json`에서 `scripts`에 `"build" : "tsc"`로 설정한후 스크립트를 실행하면 Typescript가 Javascript로 컴파일된다.
 
-``` json
+``` json title="package.json"
+// package.json
 "scripts":{
 	"build":"tsc"
 }
 ```
 
 
-```
+``` terminal
+//terminal
 npm run build
 ```
 ---
