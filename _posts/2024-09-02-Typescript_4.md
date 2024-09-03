@@ -67,6 +67,29 @@ npm run build
 }
 ```
 
+``` bash
+npm run dev
+```
+
+---
+
+> `nodemon` 라이브러리를 사용해 파일 저장 시 자동으로 컴파일 후 실행하도록 할 수 있다.
+>
+> `npm install nodemon`
+
+```json
+// package.json
+"scripts":{
+	"dev" : "nodemon --exec ts-node src/index.ts"
+}
+```
+
+``` bash
+npm run dev
+```
+
+---
+
 ### 정의 파일 (Declaration Files)
 
 > Typescript로 만들었지만 Javascript로 사용되는 패키지, 프레임워크, 라이브러리 등의 타입을 알기 위해서는 정의 파일이 필요하다.
@@ -112,3 +135,87 @@ function add(a, b){
 ```
 
 ---
+
+## 타입스크립트를 이용한 블록체인 만들기
+
+### crypto
+
+> node.js의 패키지인 `crypto` 를 사용하여 hash 값을 만들어 사용한다.
+
+crypto를 import 하는 방법
+- `import * as crypto from "crypto"` : 단순히 crypto의 모든 값을 불러온다.
+
+
+
+```json
+// package.json
+{
+  "compilerOptions": {
+	...    
+	"esModuleInterop": true,
+    "module": "CommonJS"
+  }
+}
+```
+
+---
+
+``` typescript
+import crypto from "crypto";
+
+interface BlockShape {
+  hash: string;
+  prevHash: string;
+  height: number;
+  data: string;
+}
+
+class Block implements BlockShape {
+  public hash: string;
+  
+  constructor(
+    public prevHash: string,
+    public height: number,
+    public data: string
+  ) {
+    this.hash = Block.calculateHash(prevHash, height, data);
+  }
+  
+  static calculateHash(prevHash: string, height: number, data: string): string {
+    const toHash = `${prevHash}${height}${data}`;
+    return crypto.createHash("sha256").update(toHash).digest("base64");
+  }
+}
+
+class Blockchain {
+  private blocks: Block[];
+  constructor() {
+    this.blocks = [];
+  }
+  
+  private getPrevHash() {
+    if (this.blocks.length === 0) return "";
+    return this.blocks[this.blocks.length - 1].hash;
+  }
+  
+  public addBlock(data: string) {
+    const block = new Block(this.getPrevHash(), this.blocks.length + 1, data);
+    this.blocks.push(block);
+  }
+
+  public getBlocks() {
+    return [...this.blocks];
+  }
+}
+
+  
+
+const blockchain = new Blockchain();
+
+blockchain.addBlock("first one");
+blockchain.addBlock("second one");
+blockchain.addBlock("third one");
+
+console.log(blockchain.getBlocks());
+```
+
