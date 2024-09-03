@@ -162,6 +162,10 @@ CommonJS와 ES6 모듈 사이에 import를 하는 경우 에러가 발생한다.
 }
 ```
 
+
+단순히 import만 하면 Typescript가 crypto의 타입을 인식하지 못한다.
+`npm install -D @types/node` : 노드의 패키지에 대한 **타입 정의 파일**을 불러온다.
+
 ---
 
 ### Definitely Typed
@@ -169,13 +173,8 @@ CommonJS와 ES6 모듈 사이에 import를 하는 경우 에러가 발생한다.
 > [Definitely Typed - Githuub](https://github.com/DefinitelyTyped/DefinitelyTyped)
 > 
 > npm에 올라온 다양한 패키지의 타입 정의 파일을 사용할 수 있다.
-
-
-> 단순히 import만 하면 Typescript가 crypto의 타입을 인식하지 못한다.
-> 
-> `npm install -D @types/node` : 노드의 패키지에 대한 **타입 정의 파일**을 불러온다.
-
-node 뿐만 아니라 
+>
+>`npm install -D @types/-`
 
 ---
 
@@ -184,6 +183,7 @@ node 뿐만 아니라
 ``` typescript
 import crypto from "crypto";
 
+// 블록 오브젝트 정의
 interface BlockShape {
   hash: string;
   prevHash: string;
@@ -191,6 +191,7 @@ interface BlockShape {
   data: string;
 }
 
+// 데이터 1개를 저장하는 블록
 class Block implements BlockShape {
   public hash: string;
   
@@ -201,37 +202,39 @@ class Block implements BlockShape {
   ) {
     this.hash = Block.calculateHash(prevHash, height, data);
   }
-  
+
+// prevHash, height, data를 사용하여 hash값을 생성한다.
   static calculateHash(prevHash: string, height: number, data: string): string {
     const toHash = `${prevHash}${height}${data}`;
-
 	// crypto를 사용하여 Hash값을 생성한다.
     return crypto.createHash("sha256").update(toHash).digest("base64");
   }
 }
 
+// 여러개의 블록들을 연결해 저장하는 블록체인
 class Blockchain {
   private blocks: Block[];
   constructor() {
     this.blocks = [];
   }
-  
+
+// 마지막 hash값을 불러온다.
   private getPrevHash() {
     if (this.blocks.length === 0) return "";
     return this.blocks[this.blocks.length - 1].hash;
   }
-  
+
+// 블록체인에 새로운 블록을 추가한다.
   public addBlock(data: string) {
     const block = new Block(this.getPrevHash(), this.blocks.length + 1, data);
     this.blocks.push(block);
   }
 
+// 데이터에 직접 접근하지 못하도록 새로운 리스트를 생성해 반환한다.
   public getBlocks() {
     return [...this.blocks];
   }
 }
-
-  
 
 const blockchain = new Blockchain();
 
