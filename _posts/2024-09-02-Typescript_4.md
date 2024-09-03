@@ -3,14 +3,17 @@ layout: post
 title: Typescript 4
 tags:
   - Typescript
-summary: ttt
+summary: Typescript 설정과 타입 정의 파일
 comments: true
 ---
 
 ## 타입스크립트 설정 (Typescript Configuration)
 
+> Typescript를 사용하기 위해 설치해준다.
+> 
+> `npm install -D typescript`
+> 
 > `tsconfig.json` 파일을 만들어 Typescript의 설정을 작성한다.
-
 
 - `include` : Typescript를 사용하는 디렉터리들을 지정한다.
 - `compilerOptions` : Typescript를 Javascript로 컴파일 할 때 사용하는 옵션들을 지정한다.
@@ -35,6 +38,7 @@ comments: true
 }
 ```
 
+---
 
 > `package.json`에서 `scripts`에 `"build" : "tsc"`로 설정한후 스크립트를 실행하면 Typescript가 Javascript로 컴파일된다.
 
@@ -46,16 +50,27 @@ comments: true
 ```
 
 
-``` terminal
-//terminal
+``` bash
 npm run build
 ```
+
 ---
 
+> `ts-node` 라이브러리를 사용하여 자동으로 컴파일 후 파일을 실행하도록 할 수 있다.
+> 
+> `npm install ts-node`
+
+```json
+// package.json
+"scripts":{
+	"dev" : "ts-node src/index.ts"
+}
+```
 
 ### 정의 파일 (Declaration Files)
 
 > Typescript로 만들었지만 Javascript로 사용되는 패키지, 프레임워크, 라이브러리 등의 타입을 알기 위해서는 정의 파일이 필요하다.
+> 
 > `-.d.ts` 정의 파일을 생성해 사용된 타입들을 정의한다.
 
 ```javascript title="myPackage.js"
@@ -72,6 +87,8 @@ declare module "myPackage" {
 }
 ```
 
+---
+
 ### JSDoc
 
 > Javascript에서 코드를 수정하지 않고 타입을 검사하기 위해 코멘트를 추가해 사용할 수 있다.
@@ -80,7 +97,7 @@ declare module "myPackage" {
 - `@param` : 함수의 매개변수의 타입을 지정한다.
 - `@returns` : 반환값의 타입을 지정한다.
 
-```javascript
+```javascript title="javascript JSDoc"
 // @ts-check
 
 /**
@@ -93,3 +110,5 @@ function add(a, b){
 	return a + b;
 }
 ```
+
+---
