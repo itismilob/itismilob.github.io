@@ -138,14 +138,18 @@ function add(a, b){
 
 ## 타입스크립트를 이용한 블록체인 만들기
 
+> 블록체인은 (이전 블록의 hash, 길이, 저장할 데이터) 3가지를 묶어 새로운 hash를 만들어 저장한다.
+>
+> node.js의 패키지인 `crypto` 를 사용하여 hash 값을 만들어 사용한다.
+>
+
+
 ### crypto
 
-> node.js의 패키지인 `crypto` 를 사용하여 hash 값을 만들어 사용한다.
+> crypto는 node.js의 패키지로 다양한 암호화 기능을 제공한다.
 
-crypto를 import 하는 방법
-- `import * as crypto from "crypto"` : 단순히 crypto의 모든 값을 불러온다.
-
-
+CommonJS와 ES6 모듈 사이에 import를 하는 경우 에러가 발생한다.
+에러를 해결하기 위해서는 `package.json`에 `esModuleInterop`, `module` 옵션을 설정해준다.
 
 ```json
 // package.json
@@ -159,6 +163,23 @@ crypto를 import 하는 방법
 ```
 
 ---
+
+### Definitely Typed
+
+> [Definitely Typed - Githuub](https://github.com/DefinitelyTyped/DefinitelyTyped)
+> 
+> npm에 올라온 다양한 패키지의 타입 정의 파일을 사용할 수 있다.
+
+
+> 단순히 import만 하면 Typescript가 crypto의 타입을 인식하지 못한다.
+> 
+> `npm install -D @types/node` : 노드의 패키지에 대한 **타입 정의 파일**을 불러온다.
+
+node 뿐만 아니라 
+
+---
+
+### 블록체인 코드
 
 ``` typescript
 import crypto from "crypto";
@@ -183,6 +204,8 @@ class Block implements BlockShape {
   
   static calculateHash(prevHash: string, height: number, data: string): string {
     const toHash = `${prevHash}${height}${data}`;
+
+	// crypto를 사용하여 Hash값을 생성한다.
     return crypto.createHash("sha256").update(toHash).digest("base64");
   }
 }
