@@ -53,7 +53,7 @@ comments: true
 
 ---
 
-> `<a>` 대신에 `<Link>`를 사용해서 페이지를 이동시킨다.
+> `<a>` 대신에 NextJS의`<Link>`를 사용해서 페이지를 이동시킨다.
 > `<Link>`는SPA 방식으로 html중 필요한 부분만 리렌더링 시킨다.
 
 ```typescript
@@ -82,3 +82,9 @@ export default function Layout({
   );
 }
 ```
+
+
+### 이미지 넣기
+
+> 프로젝트 폴더에 `public` 폴더를 만들고 이미지 파일을 추가한다.
+> `<img>` 태그 대신에 `<Image>`
