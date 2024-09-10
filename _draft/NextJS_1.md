@@ -50,3 +50,14 @@ comments: true
 
 - `app` 폴더 안에 원하는 이름의 폴더를 만들고 `page.tsx` 파일을 생성한다.
 - `app/list/page.tsx` : `/list`로 접속 시 `list/page.tsx` 파일이 렌더링 된다.
+
+---
+
+> `<a>` 대신에 `<Link>`를 사용해서 페이지를 이동시킨다.
+> `<Link>`는SPA 방식으로 html중 필요한 부분만 리렌더링 시킨다.
+
+```typescript
+import Link from "next/link";
+
+<Link href="/">Home</Link>
+```
