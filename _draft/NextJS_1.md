@@ -61,3 +61,8 @@ import Link from "next/link";
 
 <Link href="/">Home</Link>
 ```
+
+### layout
+
+> page를 보여줄 때 layout 파일이 있다면 layout 내용 안에 page 내용을 담아서 보여준다.
+> 상위 폴더의 layout부터 하위 폴더의 layout까지 쌓아서 보여준다.
