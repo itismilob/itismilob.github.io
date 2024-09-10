@@ -3,6 +3,8 @@ layout: post
 title: NextJS 1
 tags:
   - NextJS
+  - Typescript
+  - React
 summary: NextJS
 comments: true
 ---
@@ -88,3 +90,21 @@ export default function Layout({
 
 > 프로젝트 폴더에 `public` 폴더를 만들고 이미지 파일을 추가한다.
 > `<img>` 태그 대신에 NextJS의 `<Image>` 를 사용한다.
+> `<Image>`는 자동으로 lazy loading, 사이즈 최적화, layout shift 방지를 해준다.
+
+
+### 컴포넌트
+
+> 컴포넌트는 **server component**와 **client component**로 나뉜다.
+
+- server component
+	- 장점 : 페이지 로드시 자바스크립트가 적어서 속도가 빠르다.
+	- 단점 : html 안에 자바스크립트를 넣지 못한다. React의 useState 등을 사용하지 못한다.
+- client component
+	- 장점 : html 안에 자바스크립트를 넣어서 사용 가능
+	- 단점 : 페이지 용량이 커지고 로딩속도가 느려진다.
+
+--- 
+
+> 기본적인 React 컴포넌트는 server component로 만들어진다.
+> 파일 상단에 `"use client"` 코드를 넣어서 client componet로 변경한다.
