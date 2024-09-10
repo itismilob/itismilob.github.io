@@ -64,5 +64,21 @@ import Link from "next/link";
 
 ### layout
 
-> page를 보여줄 때 layout 파일이 있다면 layout 내용 안에 page 내용을 담아서 보여준다.
+> layout 파일이 있다면 layout 내용 안에 page 를 담아서 보여준다.
 > 상위 폴더의 layout부터 하위 폴더의 layout까지 쌓아서 보여준다.
+> **children**으로 page를 받아서 넣어주어야 한다.
+
+```typescript
+export default function Layout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <>
+      <header>...</header>
+      <div>{children}</div>
+    </>
+  );
+}
+```
