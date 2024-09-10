@@ -87,4 +87,4 @@ export default function Layout({
 ### 이미지 넣기
 
 > 프로젝트 폴더에 `public` 폴더를 만들고 이미지 파일을 추가한다.
-> `<img>` 태그 대신에 `<Image>`
+> `<img>` 태그 대신에 NextJS의 `<Image>` 를 사용한다.
