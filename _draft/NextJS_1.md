@@ -40,5 +40,13 @@ comments: true
 `app/page.tsx` : 프로젝트의 메인 페이지이다.
 `app/globals.css` : 전체적으로 적용되는 css 파일이다.
 `xxx.module.css` : 특정 페이지에만 적용되는 css 파일이다.
-
 `app/api` : 서버 기능을 만드는 폴더이다.
+
+---
+
+### 라우팅
+
+> NextJS에서는 폴더 구조 자동 라우팅을 지원한다.
+
+- `app` 폴더 안에 원하는 이름의 폴더를 만들고 `page.tsx` 파일을 생성한다.
+- `app/list/page.tsx` : `/list`로 접속 시 `list/page.tsx` 파일이 렌더링 된다.
