@@ -88,7 +88,9 @@ layout: default
   document.addEventListener('scroll', function(e) {
     var current = headerNodes.filter(function(header) {
       var headerY = window.pageYOffset + header.getBoundingClientRect().top;
-      return window.scrollY >= headerY - 60;
+        // height of check the top maybe
+      // return window.scrollY >= headerY - 60;
+      return window.scrollY >= headerY - 150;
     });
 
     if (current.length > 0) {
