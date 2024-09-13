@@ -3,14 +3,11 @@ layout: default
 ---
 
 <div class="post-container">
-<article class="post">
-
+  <article class="post">
     <h1 class="post-title">{{ page.title }}</h1>
 
     <div>
-      <span class="date">
-        {{ page.date | date: "%Y-%m-%d" }}
-      </span>
+      <span class="date"> {{ page.date | date: "%Y-%m-%d" }} </span>
 
       <ul class="tag">
         {% for tag in page.tags %}
@@ -21,105 +18,116 @@ layout: default
         </li>
         {% endfor %}
       </ul>
-      
     </div>
 
     <h6>{{ page.summary }}</h6>
 
-    <div class="entry post-content">
-      {{ content }}
-    </div>
+    <div class="entry post-content">{{ content }}</div>
 
     <div class="pagination">
       {% if page.previous.url %}
-        <span class="prev" >
-            <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-              &#xE000; {{ page.previous.title }}
-            </a>
-        </span>
-      {% endif %}
-      {% if page.next.url %}
-        <span class="next" >
-            <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-              {{ page.next.title }} &#xE001;
-            </a>
-        </span>
+      <span class="prev">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
+          &#xE000; {{ page.previous.title }}
+        </a>
+      </span>
+      {% endif %} {% if page.next.url %}
+      <span class="next">
+        <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
+          {{ page.next.title }} &#xE001;
+        </a>
+      </span>
       {% endif %}
     </div>
 
     {% include disqus.html %}
-
-</article>
-<div class="toc">
-  <h2>목차</h2>
-  <div>{% include toc.html html=content %}</div>
-</div>
+  </article>
+  <div class="toc">
+    <h2>목차</h2>
+    <div>{% include toc.html html=content %}</div>
+  </div>
 </div>
 
 <script>
   function getTOCNodes(master) {
-    var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
-    var tocNodes = nodes.filter(function(elem) {
-        return elem.tagName == "A";
+    var nodes = Array.prototype.slice.call(master.getElementsByTagName('*'), 0);
+    var tocNodes = nodes.filter(function (elem) {
+      return elem.tagName == 'A';
     });
     return tocNodes;
   }
   function getHeaderNodes(master) {
-    var nodes = Array.prototype.slice.call(master.getElementsByTagName("*"), 0);
-    var headerNodes = nodes.filter(function(elem) {
-        return elem.tagName == "H1" || elem.tagName == "H2" || elem.tagName == "H3" || elem.tagName == "H4" || elem.tagName == "H5" || elem.tagName == "H6";
+    var nodes = Array.prototype.slice.call(master.getElementsByTagName('*'), 0);
+    var headerNodes = nodes.filter(function (elem) {
+      return (
+        elem.tagName == 'H1' ||
+        elem.tagName == 'H2' ||
+        elem.tagName == 'H3' ||
+        elem.tagName == 'H4' ||
+        elem.tagName == 'H5' ||
+        elem.tagName == 'H6'
+      );
     });
     return headerNodes;
   }
 
-  var title = document.getElementsByClassName("post-title")[0];
+  var title = document.getElementsByClassName('post-title')[0];
   var titleY = window.pageYOffset + title.getBoundingClientRect().top;
-  
-  var article = document.getElementsByClassName("post-content")[0];
+
+  var article = document.getElementsByClassName('post-content')[0];
   var articleY = window.pageYOffset + article.getBoundingClientRect().top;
 
-  var toc = document.getElementsByClassName("toc")[0];
+  var toc = document.getElementsByClassName('toc')[0];
 
   var headerNodes = getHeaderNodes(article);
   var tocNodes = getTOCNodes(toc);
 
   var before = undefined;
 
-  document.addEventListener('scroll', function(e) {
-    var current = headerNodes.filter(function(header) {
-      var headerY = window.pageYOffset + header.getBoundingClientRect().top;
+  document.addEventListener(
+    'scroll',
+    function (e) {
+      var current = headerNodes.filter(function (header) {
+        var headerY = window.pageYOffset + header.getBoundingClientRect().top;
         // height of check the top maybe
-      // return window.scrollY >= headerY - 60;
-      return window.scrollY >= headerY - 300;
-    });
+        // return window.scrollY >= headerY - 60;
+        return window.scrollY >= headerY - 300;
+      });
 
-    if (current.length > 0) {
-      current = current[current.length-1];
+      if (current.length > 0) {
+        current = current[current.length - 1];
 
-      var currentA = tocNodes.filter(function(tocNode) {
-        return tocNode.innerHTML == current.innerHTML;
-      })
-      
-      currentA = currentA[0];
-      if (currentA) {
-        if (before == undefined) before = currentA;
+        var currentA = tocNodes.filter(function (tocNode) {
+          return tocNode.innerHTML == current.innerHTML;
+        });
 
-        if (before != currentA) {
-          before.classList.remove("toc-active");
-          before = currentA;
+        currentA = currentA[0];
+        if (currentA) {
+          if (before == undefined) before = currentA;
+
+          if (before != currentA) {
+            before.classList.remove('toc-active');
+            before = currentA;
+          }
+
+          currentA.classList.add('toc-active');
+        } else {
+          if (before) before.classList.remove('toc-active');
         }
-
-        currentA.classList.add("toc-active");
+      } else {
+        if (before) before.classList.remove('toc-active');
       }
-      else {
-        if (before) 
-          before.classList.remove("toc-active");
-      }
-    }
-    else {
-      if (before) 
-          before.classList.remove("toc-active");
-    }
-
-  }, false);
+    },
+    false
+  );
 </script>
+
+<script
+  src="https://utteranc.es/client.js"
+  repo="itismilob/itismilob.github.io"
+  issue-term="url"
+  label="Comment"
+  theme="github-light"
+  crossorigin="anonymous"
+  async
+></script>
