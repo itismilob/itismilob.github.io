@@ -136,6 +136,8 @@ const d = superPrint([1, false, "a"]);
 
 
 > 제네릭의 타입을 여러개로 설정해서 사용할 수 있다.
+
+
 ```typescript
 type SuperPrint = {
 	// 각각의 변수 타입을 다르게 지정한다.
