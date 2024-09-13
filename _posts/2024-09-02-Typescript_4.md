@@ -24,17 +24,17 @@ comments: true
 	- `allowJs` : Typescript에서 Javascript를 import해 사용할 수 있는지 지정한다.
 
 
-```json title="tsconfig.json"
+``` json
 // tsconfig.json
 {
-  "include": ["src"],
-  "compilerOptions": {
-	  "outDir": "build",
-	  "target": "ES6",
-	  "lib": ["ES6", "DOM"],
-	  "strict": true,
-	  "allowJs": true
-  }
+	"include": ["src"],
+	"compilerOptions": {
+		"outDir": "build",
+		"target": "ES6",
+		"lib": ["ES6", "DOM"],
+		"strict": true,
+		"allowJs": true
+	}
 }
 ```
 
@@ -42,7 +42,7 @@ comments: true
 
 > `package.json`에서 `scripts`에 `"build" : "tsc"`로 설정한후 스크립트를 실행하면 Typescript가 Javascript로 컴파일된다.
 
-``` json title="package.json"
+``` json
 // package.json
 "scripts":{
 	"build":"tsc"
@@ -51,6 +51,7 @@ comments: true
 
 
 ``` bash
+// terminal
 npm run build
 ```
 
@@ -60,7 +61,7 @@ npm run build
 > 
 > `npm install ts-node`
 
-```json
+``` json
 // package.json
 "scripts":{
 	"dev" : "ts-node src/index.ts"
@@ -68,6 +69,7 @@ npm run build
 ```
 
 ``` bash
+// terminal
 npm run dev
 ```
 
@@ -77,7 +79,7 @@ npm run dev
 >
 > `npm install nodemon`
 
-```json
+``` json
 // package.json
 "scripts":{
 	"dev" : "nodemon --exec ts-node src/index.ts"
@@ -85,6 +87,7 @@ npm run dev
 ```
 
 ``` bash
+// terminal
 npm run dev
 ```
 
@@ -96,14 +99,14 @@ npm run dev
 > 
 > `-.d.ts` 정의 파일을 생성해 사용된 타입들을 정의한다.
 
-```javascript title="myPackage.js"
+``` javascript
 // myPackage.js
 function add(a, b){
 	return a + b;
 }
 ```
 
-```typescript title="myPackage.d.ts"
+``` typescript
 // myPackage.d.ts
 declare module "myPackage" {
 	function add(a:number, b:number): number;
@@ -120,7 +123,7 @@ declare module "myPackage" {
 - `@param` : 함수의 매개변수의 타입을 지정한다.
 - `@returns` : 반환값의 타입을 지정한다.
 
-```javascript title="javascript JSDoc"
+``` javascript
 // @ts-check
 
 /**
@@ -154,11 +157,11 @@ CommonJS와 ES6 모듈 사이에 import를 하는 경우 에러가 발생한다.
 ```json
 // package.json
 {
-  "compilerOptions": {
-	...    
-	"esModuleInterop": true,
-    "module": "CommonJS"
-  }
+	"compilerOptions": {
+		...    
+		"esModuleInterop": true,
+		"module": "CommonJS"
+	}
 }
 ```
 
@@ -185,55 +188,57 @@ import crypto from "crypto";
 
 // 블록 오브젝트 정의
 interface BlockShape {
-  hash: string;
-  prevHash: string;
-  height: number;
-  data: string;
+	hash: string;
+	prevHash: string;
+	height: number;
+	data: string;
 }
 
 // 데이터 1개를 저장하는 블록
 class Block implements BlockShape {
-  public hash: string;
+	public hash: string;
   
-  constructor(
-    public prevHash: string,
-    public height: number,
-    public data: string
-  ) {
-    this.hash = Block.calculateHash(prevHash, height, data);
-  }
+	constructor(
+		public prevHash: string,
+		public height: number,
+		public data: string
+	) {
+		this.hash = Block.calculateHash(prevHash, height, data);
+	}
 
 // prevHash, height, data를 사용하여 hash값을 생성한다.
-  static calculateHash(prevHash: string, height: number, data: string): string {
-    const toHash = `${prevHash}${height}${data}`;
-	// crypto를 사용하여 Hash값을 생성한다.
-    return crypto.createHash("sha256").update(toHash).digest("base64");
-  }
+	static calculateHash(
+		prevHash: string, height: number, data: string
+	): string {
+		const toHash = `${prevHash}${height}${data}`;
+		// crypto를 사용하여 Hash값을 생성한다.
+		return crypto.createHash("sha256").update(toHash).digest("base64");
+	}
 }
 
 // 여러개의 블록들을 연결해 저장하는 블록체인
 class Blockchain {
-  private blocks: Block[];
-  constructor() {
-    this.blocks = [];
-  }
+	private blocks: Block[];
+	constructor() {
+		this.blocks = [];
+	}
 
 // 마지막 hash값을 불러온다.
-  private getPrevHash() {
-    if (this.blocks.length === 0) return "";
-    return this.blocks[this.blocks.length - 1].hash;
-  }
+	private getPrevHash() {
+		if (this.blocks.length === 0) return "";
+		return this.blocks[this.blocks.length - 1].hash;
+	}
 
 // 블록체인에 새로운 블록을 추가한다.
-  public addBlock(data: string) {
-    const block = new Block(this.getPrevHash(), this.blocks.length + 1, data);
-    this.blocks.push(block);
-  }
+	public addBlock(data: string) {
+		const block = new Block(this.getPrevHash(), this.blocks.length + 1, data);
+		this.blocks.push(block);
+	}
 
 // 데이터에 직접 접근하지 못하도록 새로운 리스트를 생성해 반환한다.
-  public getBlocks() {
-    return [...this.blocks];
-  }
+	public getBlocks() {
+		return [...this.blocks];
+	}
 }
 
 const blockchain = new Blockchain();
