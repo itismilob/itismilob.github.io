@@ -3,52 +3,58 @@ layout: default
 ---
 
 <div class="post-container">
-  <article class="post">
-    <h1 class="post-title">{{ page.title }}</h1>
+  <div class="article-container">
+    <article class="post">
+      <h1 class="post-title">{{ page.title }}</h1>
 
-    <div>
-      <span class="date"> {{ page.date | date: "%Y-%m-%d" }} </span>
+      <div>
+        <span class="date"> {{ page.date | date: "%Y-%m-%d" }} </span>
 
-      <ul class="tag">
-        {% for tag in page.tags %}
-        <li>
-          <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
-            {{ tag }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </div>
+        <ul class="tag">
+          {% for tag in page.tags %}
+          <li>
+            <a href="{{ site.url }}{{ site.baseurl }}/tags#{{ tag }}">
+              {{ tag }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
 
-    <h6>{{ page.description }}</h6>
+      <h6>{{ page.description }}</h6>
 
-    <hr />
-    <image src="{{ page.image }}" />
-    <hr />
-
-    <div class="entry post-content">{{ content }}</div>
-
-    <div class="pagination">
-      {% if page.previous.url %}
-      <span class="prev">
-        <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
-          &#xE000; {{ page.previous.title }}
-        </a>
-      </span>
-      {% endif %} {% if page.next.url %}
-      <span class="next">
-        <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
-          {{ page.next.title }} &#xE001;
-        </a>
-      </span>
+      {% if page.image %}
+      <hr />
+      <image class="post-image" src="{{ page.image }}" />
       {% endif %}
-    </div>
 
-    {% include disqus.html %}
-  </article>
-  <div class="toc">
-    <h2>목차</h2>
-    <div>{% include toc.html html=content %}</div>
+      <hr />
+
+      <div class="entry post-content">{{ content }}</div>
+
+      {% include disqus.html %}
+    </article>
+
+    <div class="toc">
+      <h2>목차</h2>
+      <div>{% include toc.html html=content %}</div>
+    </div>
+  </div>
+
+  <div class="pagination">
+    {% if page.previous.url %}
+    <span class="prev">
+      <a href="{{ site.url }}{{ site.baseurl }}{{ page.previous.url }}">
+        &#xE000; {{ page.previous.title }}
+      </a>
+    </span>
+    {% endif %} {% if page.next.url %}
+    <span class="next">
+      <a href="{{ site.url }}{{ site.baseurl }}{{ page.next.url }}">
+        {{ page.next.title }} &#xE001;
+      </a>
+    </span>
+    {% endif %}
   </div>
 </div>
 
@@ -124,6 +130,7 @@ layout: default
   );
 </script>
 
+{% if page.comments == true %}
 <script
   src="https://utteranc.es/client.js"
   repo="itismilob/itismilob.github.io"
@@ -133,3 +140,4 @@ layout: default
   crossorigin="anonymous"
   async
 ></script>
+{% endif %}

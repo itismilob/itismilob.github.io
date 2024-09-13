@@ -3,7 +3,8 @@ layout: post
 title: Typescript 3
 tags:
   - Typescript
-summary: 객체 지향 프로그래밍 (Object-Oriented-Programing)
+description: 객체 지향 프로그래밍 (Object-Oriented-Programing)
+image: /images/typescript_logo.webp
 comments: true
 ---
 

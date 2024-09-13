@@ -286,7 +286,7 @@ img {
   max-width: 100%;
   margin: 0 0 1em;
   border-radius: 10px;
-  box-shadow: 0 0 10px #727f8b;
+  box-shadow: 0 0 10px lightgray;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -345,6 +345,9 @@ img {
 .masthead {
   padding: 20px 0;
   border-bottom: 1px solid $lightGray;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   @include mobile {
     text-align: center;
@@ -354,7 +357,7 @@ img {
 .site-avatar {
   float: left;
   width: 70px;
-  height: 70px;
+  // height: 70px;
   margin-right: 15px;
 
   @include mobile {
@@ -404,7 +407,7 @@ img {
 
 nav {
   float: right;
-  margin-top: 23px; // @TODO: Vertically middle align
+  // margin-top: 23px; // @TODO: Vertically middle align
   font-family: $helveticaNeue;
   font-size: 18px;
 

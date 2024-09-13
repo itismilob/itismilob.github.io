@@ -3,7 +3,8 @@ layout: post
 title: Typescript 1
 tags:
   - Typescript
-summary: Typescript 특징, 타입
+description: Typescript 특징, 타입
+image: /images/typescript_logo.webp
 comments: true
 ---
 

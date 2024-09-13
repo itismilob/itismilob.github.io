@@ -23,10 +23,10 @@ navigation:
     url: /
   - name: About
     url: /about
-  - name: Archive
-    url: /archive
   - name: Tags
     url: /tags
+  - name: Archive
+    url: /archive
   # - name: Theme
   #   url: https://github.com/AWEEKJ/kiko-now
 

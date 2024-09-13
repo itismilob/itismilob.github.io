@@ -3,7 +3,8 @@ layout: post
 title: Typescript 4
 tags:
   - Typescript
-summary: Typescript 설정과 타입 정의 파일
+description: Typescript 설정과 타입 정의 파일
+image: /images/typescript_logo.webp
 comments: true
 ---
 
