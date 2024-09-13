@@ -6,6 +6,13 @@
   content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
 />
 
+<!-- title -->
+{% if page.title %}
+<meta property="og:title" content="{{ page.title }}" />
+<meta property="twitter:title" content="{{ page.title }}" />
+{% endif %}
+
+<!-- description -->
 {% if page.description %}
 <meta name="description" content="{{ page.description | strip_html }}" />
 <meta property="og:description" content="{{ page.description | strip_html }}" />
@@ -15,7 +22,9 @@
 {% endif %}
 <meta name="author" content="{{ site.name }}" />
 
-{% if page.title %}
-<meta property="og:title" content="{{ page.title }}" />
-<meta property="twitter:title" content="{{ page.title }}" />
+<!-- image -->
+{% if page.image %}
+<meta property="og:image" content="{{ page.image }}" />
+{% else %}
+<meta property="og:image" content="{{ site.image }}" />
 {% endif %}
