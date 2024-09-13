@@ -61,6 +61,7 @@ const add:Add = (a, b) => {
 ---
 
 > 매개변수의 개수가 다른 경우 옵셔널 타입으로 지정해준다.
+
 ```typescript
 type Add = {
 	(a:number, b:number) : number
