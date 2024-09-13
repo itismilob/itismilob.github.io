@@ -5,9 +5,9 @@
 // IMPORTS
 //
 
-@import "reset";
-@import "open-color";
-@import "variables";
+@import 'reset';
+@import 'open-color';
+@import 'variables';
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -147,7 +147,7 @@ ul {
 ul {
   > li:before {
     // content: '\2022';
-    content: "▫";
+    content: '▫';
     padding-right: $ul-bullets-right-space;
     font-family: $ul-bullets-font;
     font-size: $ul-bullets-font-size;
@@ -161,7 +161,7 @@ ol {
 
   > li:before {
     counter-increment: section;
-    content: counter(section) ".";
+    content: counter(section) '.';
     padding-right: $ol-bullets-right-space;
     font-family: $ol-bullets-font;
     font-size: $ol-bullets-font-size;
@@ -308,7 +308,7 @@ img {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -458,7 +458,7 @@ nav {
     font-size: $small-font-size;
 
     li:before {
-      content: "";
+      content: '';
     }
 
     li {
@@ -536,7 +536,7 @@ nav {
 // Tags
 .tags > .label {
   > li:before {
-    content: "";
+    content: '';
   }
 
   > li {
@@ -628,5 +628,13 @@ footer {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "components/post";
+@import 'highlights';
+@import 'components/post';
+
+// custom css
+
+// utterances
+
+.utterances {
+  max-width: none;
+}
