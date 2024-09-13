@@ -89,9 +89,7 @@ layout: default
     function (e) {
       var current = headerNodes.filter(function (header) {
         var headerY = window.pageYOffset + header.getBoundingClientRect().top;
-        // height of check the top maybe
-        // return window.scrollY >= headerY - 60;
-        return window.scrollY >= headerY - 300;
+        return window.scrollY >= headerY - 60;
       });
 
       if (current.length > 0) {
