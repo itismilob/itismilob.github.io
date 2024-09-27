@@ -1,10 +1,9 @@
-
 //
 // VARIABLES
 //
 
 // Colors
-$blue: #4183C4;
+$blue: #4183c4;
 
 // Grays
 $black: #000;
@@ -20,8 +19,9 @@ $helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Fonts
-$base-font: 'Spoqa Han Sans', 'Source Sans Pro', 'Apple SD Gothic Neo', 'Nanum Barun Gothic', 'Nanum Gothic', 'Verdana', 'Arial', 'Dotum', sans-serif;
-$code-font: 'Menlo', 'Courier New', 'Monaco', 'Spoqa Han Sans', monospace;
+$base-font: "Spoqa Han Sans", "Source Sans Pro", "Apple SD Gothic Neo",
+  "Nanum Barun Gothic", "Nanum Gothic", "Verdana", "Arial", "Dotum", sans-serif;
+$code-font: "Menlo", "Courier New", "Monaco", "Spoqa Han Sans", monospace;
 
 // Font sizes
 $base-font-size: 18px;
@@ -65,18 +65,18 @@ $li-line-height: 1.55;
 $ul-bullets-font: inherit;
 $ul-bullets-font-size: 1.4em;
 $ul-bullets-font-line-height: 1.2;
-$ul-bullets-right-space: .3em;
+$ul-bullets-right-space: 0.3em;
 
 $ol-bullets-font: inherit;
 $ol-bullets-font-size: 1em;
 $ol-bullets-font-line-height: inherit;
-$ol-bullets-right-space: .3em;
+$ol-bullets-right-space: 0.3em;
 
 $li-child-size-ratio: 0.95;
 
 $dt-width: 180px;
 $dt-dd-space: 20px;
-$dd-position: $dt-width+$dt-dd-space;
+$dd-position: $dt-width + $dt-dd-space;
 
 // Mobile breakpoints
 @mixin mobile {
