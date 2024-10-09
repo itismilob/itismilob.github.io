@@ -1,9 +1,9 @@
 ---
 layout: post
-title: 
+title:
 tags:
   - TagHere
-description: 
-image: /image/
+description:
+image: /images/
 comments: true
 ---
