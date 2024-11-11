@@ -5,7 +5,7 @@ tags:
   - NPM
   - 문제해결
 description: package.json script 문제 해결
-image: /images/npm_logo.jpeg
+image: /images/logos/npm_logo.jpeg
 comments: true
 ---
 
@@ -19,14 +19,13 @@ root 디렉터리에 바로 위치한 **서버**의 패키지는 잘 설치가 �
 먼저 프로젝트 폴더 구조는 다음과 같다.
 
 - root
-	- git
-	- client
-		- react
-		- package.json
-	- express
-	- package.json
-	- dist
-
+  - git
+  - client
+    - react
+    - package.json
+  - express
+  - package.json
+  - dist
 
 ---
 
@@ -90,15 +89,15 @@ npm i -S [패키지] -w [하위 패키지]
 root 폴더에서 서버와 클라이언트 패키지를 관리할 수 있도록 폴더 구조를 바꿨다.
 
 - root
-	- git
-	- package.json
-	- client
-		- react
-		- package.json
-	- server
-		- express
-		- package.json
-	- dist
+  - git
+  - package.json
+  - client
+    - react
+    - package.json
+  - server
+    - express
+    - package.json
+  - dist
 
 root 패키지에서 클라이언트 빌드와 서버 실행을 모두 하도록 스크립트를 추가했다.
 nodemon도 root에 추가해서 빌드 -> 서버 실행 과정을 자동화 했다.

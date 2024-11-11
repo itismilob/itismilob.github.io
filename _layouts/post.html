@@ -25,11 +25,10 @@ layout: default
 
       {% if page.image %}
       <hr />
-      <image class="post-image" src="{{ page.image }}" />
+      <img class="post-image" src="{{ page.image }}" />
       {% endif %}
 
       <hr />
-
       <div class="entry post-content">{{ content }}</div>
 
       {% include disqus.html %}
