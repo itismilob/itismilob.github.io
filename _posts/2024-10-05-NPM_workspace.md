@@ -66,7 +66,7 @@ root 디렉터리에 바로 위치한 **서버**의 패키지는 잘 설치가 �
 // 하위 패키지의 폴더명을 적어준다.
 "workspaces":[
 	"client",
-	...
+	"server"
 ]
 
 // -w 옵션을 통해 하위 폴더의 스크립트를 실행한다.
@@ -79,7 +79,7 @@ root 디렉터리에 바로 위치한 **서버**의 패키지는 잘 설치가 �
 - `-S` 키워드를 활용해 하위 패키지에 모듈을 추가할 수도 있다.
 
 ```bash
-npm i -S [패키지] -w [하위 패키지]
+npm install -S [설치할 모듈] -w [하위 패키지]
 ```
 
 ---
@@ -103,15 +103,15 @@ root 패키지에서 클라이언트 빌드와 서버 실행을 모두 하도록
 nodemon도 root에 추가해서 빌드 -> 서버 실행 과정을 자동화 했다.
 
 ```json
-  "workspaces": [
-    "server",
-    "client"
-  ],
-  "scripts": {
-    "build": "npm run build -w client",
-    "start": "npm run start -w server",
-    "dev": "nodemon --exec \"npm run build -w client && npm run dev -w server\""
-  },
+"workspaces": [
+	"server",
+	"client"
+],
+"scripts": {
+	"build": "npm run build -w client",
+	"start": "npm run start -w server",
+	"dev": "nodemon --exec \"npm run build -w client && npm run dev -w server\""
+},
 ```
 
 ---
