@@ -10,7 +10,7 @@ tags:
   - Express
   - Firebase
 description: 5개의 프레임워크를 사용하고 비교해보자.
-image: /images/posts/try all frameworks/logo.png
+image: /images/posts/tryallframeworks/logo.png
 comments: true
 ---
 
@@ -29,7 +29,7 @@ comments: true
 > Javascript를 사용해서 프레임워크를 선택할 수 있도록 만들었다.
 > 사용자가 없으면 자동으로 가입되도록 했다. 간단한 프로필 이미지 업로드 기능을 만들었다.
 
-![Sign in](/images/posts/try all frameworks/Screenshot 2025-03-10 at 7.18.58 PM.png)
+![Sign in](/images/posts/tryallframeworks/Screenshot 2025-03-10 at 7.18.58 PM.png)
 
 ## Community
 
@@ -38,15 +38,15 @@ comments: true
 
 List page
 
-![List page](/images/posts/try all frameworks/Screenshot 2025-03-10 at 7.19.12 PM.png)
+![List page](/images/posts/tryallframeworks/Screenshot 2025-03-10 at 7.19.12 PM.png)
 
 Content page, comment
 
-![Content page](/images/posts/try all frameworks/Screenshot 2025-03-10 at 7.19.27 PM.png)
+![Content page](/images/posts/tryallframeworks/Screenshot 2025-03-10 at 7.19.27 PM.png)
 
 Write page
 
-![Write page](/images/posts/try all frameworks/Screenshot 2025-03-10 at 7.19.35 PM.png)
+![Write page](/images/posts/tryallframeworks/Screenshot 2025-03-10 at 7.19.35 PM.png)
 
 # 프로젝트 설명
 
