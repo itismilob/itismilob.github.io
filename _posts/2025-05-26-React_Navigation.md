@@ -4,6 +4,7 @@ title: React Navigation
 tags:
   - React_Native
   - React_Navigation
+  - GooApp
 description: React Native 라우팅을 위한 Navigation 라이브러리
 image: /images/logos/react_logo.webp
 comments: true

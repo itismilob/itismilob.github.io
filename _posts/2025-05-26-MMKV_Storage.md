@@ -3,6 +3,7 @@ layout: post
 title: React Native MMKV
 tags:
   - React_Native
+  - GooApp
 description: React Native에서 로컬 데이터 저장하기
 image: /images/logos/react_logo.webp
 comments: true

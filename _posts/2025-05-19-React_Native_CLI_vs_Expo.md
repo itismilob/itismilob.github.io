@@ -4,6 +4,7 @@ title: React Native CLI vs Expo
 tags:
   - React_Native
   - Expo
+  - GooApp
 description: React Native CLI와 Expo를 비교하면서 어떤걸 사용할지 정해보자!
 image: /images/logos/react_logo.webp
 comments: true
