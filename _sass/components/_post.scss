@@ -36,12 +36,21 @@
   }
 }
 
+.post-content {
+  img {
+    width: 100%;
+    max-width: 300px;
+    background: #ddd;
+    box-shadow: 0 0 10px 10px #ddd;
+    margin: 1em 0;
+  }
+}
+
 .highlight {
   white-space: break-spaces;
 }
 
 // sidebar
-
 .toc {
   @media (max-width: 1200px) {
     display: none;

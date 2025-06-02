@@ -5,9 +5,9 @@
 // IMPORTS
 //
 
-@import "reset";
-@import "open-color";
-@import "variables";
+@import 'reset';
+@import 'open-color';
+@import 'variables';
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -150,7 +150,7 @@ ul {
 
 ul {
   > li:before {
-    content: "\2022";
+    content: '\2022';
     padding-right: $ul-bullets-right-space;
     font-family: $ul-bullets-font;
     font-size: $ul-bullets-font-size;
@@ -164,7 +164,7 @@ ol {
 
   > li:before {
     counter-increment: section;
-    content: counter(section) ".";
+    content: counter(section) '.';
     padding-right: $ol-bullets-right-space;
     font-family: $ol-bullets-font;
     font-size: $ol-bullets-font-size;
@@ -287,9 +287,9 @@ a.footnote {
 img {
   display: block;
   max-width: 100%;
-  margin: 0 0 1em;
+  margin: 1em 0;
   border-radius: 10px;
-  box-shadow: 0 0 10px lightgray;
+  box-shadow: 0 0 10px #ddd;
 }
 
 // Fixes images in popup boxes from Google Translate
@@ -311,7 +311,7 @@ img {
 // http://nicolasgallagher.com/micro-clearfix-hack/
 .clearfix:before,
 .clearfix:after {
-  content: " ";
+  content: ' ';
   display: table;
 }
 
@@ -465,7 +465,7 @@ nav {
     font-size: $small-font-size;
 
     li:before {
-      content: "";
+      content: '';
     }
 
     li {
@@ -543,7 +543,7 @@ nav {
 // Tags
 .tags > .label {
   > li:before {
-    content: "";
+    content: '';
   }
 
   > li {
@@ -635,9 +635,9 @@ footer {
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "highlights";
-@import "components/post";
-@import "components/custom";
+@import 'highlights';
+@import 'components/post';
+@import 'components/custom';
 
 // custom css
 
