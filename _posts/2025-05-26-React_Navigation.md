@@ -106,11 +106,11 @@ export default function App(){
 
 #### 화면 이동
 
-- `{tsx} navigation.navigate('Details')` : 해당 스크린으로 **이동**, 이미 스택에 있으면 **기존 화면으로 이동** (중복 방지)
-- `{tsx} navigation.push('Details')` : 해당 스크린을 **새로 하나 더 스택에 쌓음** (중복 가능)
-- `{tsx} navigation.goBack()` : 뒤로가기, 히스토리 pop
-- `{tsx} navigation.popTo('Home')` : 히스토리에 Home 화면으로 이동
-- `{tsx} navigation.popToTop()` : 최상위로 이동
+- `navigation.navigate('Details')` : 해당 스크린으로 **이동**, 이미 스택에 있으면 **기존 화면으로 이동** (중복 방지)
+- `navigation.push('Details')` : 해당 스크린을 **새로 하나 더 스택에 쌓음** (중복 가능)
+- `navigation.goBack()` : 뒤로가기, 히스토리 pop
+- `navigation.popTo('Home')` : 히스토리에 Home 화면으로 이동
+- `navigation.popToTop()` : 최상위로 이동
 
 ```tsx
 // 화면 이동에 담을 props 데이터의 타입을 지정
@@ -179,10 +179,10 @@ const RootStack = createNativeStackNavigator<RootStackParams>({
 });
 ```
 
-1. `{tsx} navigation.navigate('RouteName', {params object})` : navigation 메소드에 param 전달
-2. `{tsx} navigation.popTo('BeforeScreen', {params object})` : popTo를 통해 이전 화면에 param을 전달
-3. `{tsx} route.params` : 전달된 param 불러옴
-4. `{tsx} navigation.setParams({params object})` : 현재 화면의 param 데이터 변경
+1. `navigation.navigate('RouteName', {params object})` : navigation 메소드에 param 전달
+2. `navigation.popTo('BeforeScreen', {params object})` : popTo를 통해 이전 화면에 param을 전달
+3. `route.params` : 전달된 param 불러옴
+4. `navigation.setParams({params object})` : 현재 화면의 param 데이터 변경
 
 중첩 화면(Nested navigator)에서 스크린을 명시해서 데이터 전달
 ```tsx
@@ -218,7 +218,7 @@ Drawer Navigator 의 화면에서는 Stack Navigator의 메소드 `push`, `repla
 만약 부모 네비게이터에서 자식의 액션을 사용하려면 `dispatch`를 사용해야 한다.
 dispatch : navigation state(상태)를 업데이트 한다.
 
-`{tsx} navigation.dispatch(DrawerActions.openDrawer())`
+`navigation.dispatch(DrawerActions.openDrawer())`
 
 ---
 
