@@ -17,18 +17,28 @@
     title="{{ site.name }} - {{ site.description }}"
     href="{{ site.baseurl }}/feed.xml"
   />
+
+  <!-- Highlight.js -->
   <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/default.min.css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/styles/github-dark-dimmed.min.css"
   />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/highlight.min.js"></script>
-
   <!-- and it's easy to individually load additional languages -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.11.1/languages/go.min.js"></script>
-
   <script>
     hljs.highlightAll();
+    hljs.initHighlightingOnLoad();
   </script>
+
+  <!-- Highlight.js line numbers -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.9.0/highlightjs-line-numbers.min.js"></script>
+  <!-- Highlight.js copy button -->
+  <script src="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/highlightjs-copy/dist/highlightjs-copy.min.css"
+  />
 
   <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
 
