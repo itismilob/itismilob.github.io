@@ -16,7 +16,7 @@
 
 .post {
   width: 100%;
-  @media (max-width: 1200px) {
+  @media (min-width: 1200px) {
     padding: 0 300px;
   }
 
