@@ -43,7 +43,6 @@ body {
 
 #main {
   height: auto;
-  min-height: 100%;
   padding-bottom: 50px;
 }
 
@@ -590,7 +589,10 @@ nav {
 
 // Footer
 .wrapper-footer {
-  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  // position: relative;
   // transform: translateY(-100%);
   border-top: 1px solid $footer-border-color;
   border-bottom: 1px solid $footer-border-color;
