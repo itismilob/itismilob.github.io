@@ -56,6 +56,13 @@
 
 .highlight {
   white-space: break-spaces;
+  max-width: 90vw;
+}
+
+code {
+  white-space: pre;
+  border-radius: 15px;
+  overflow: auto;
 }
 
 // sidebar
