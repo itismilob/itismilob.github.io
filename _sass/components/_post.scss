@@ -1,6 +1,7 @@
 .article-container {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .post-image {
@@ -15,7 +16,9 @@
 
 .post {
   width: 100%;
-  padding: 0 200px;
+  @media (max-width: 1200px) {
+    padding: 0 300px;
+  }
 
   h2,
   h3,
