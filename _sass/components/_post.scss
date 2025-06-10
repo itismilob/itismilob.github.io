@@ -15,12 +15,17 @@
 
 .post {
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   @media (min-width: $max-width) {
     padding-left: 300px;
   }
 
   & > * {
     max-width: 607px;
+    width: 100%;
   }
 
   h2,
