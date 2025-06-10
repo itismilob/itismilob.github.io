@@ -15,13 +15,13 @@ $white: #fff;
 
 // Font stacks
 $helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$helveticaNeue: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $georgia: Georgia, serif;
 
 // Fonts
-$base-font: "Spoqa Han Sans", "Source Sans Pro", "Apple SD Gothic Neo",
-  "Nanum Barun Gothic", "Nanum Gothic", "Verdana", "Arial", "Dotum", sans-serif;
-$code-font: "Menlo", "Courier New", "Monaco", "Spoqa Han Sans", monospace;
+$base-font: 'Spoqa Han Sans', 'Source Sans Pro', 'Apple SD Gothic Neo',
+  'Nanum Barun Gothic', 'Nanum Gothic', 'Verdana', 'Arial', 'Dotum', sans-serif;
+$code-font: 'Menlo', 'Courier New', 'Monaco', 'Spoqa Han Sans', monospace;
 
 // Font sizes
 $base-font-size: 18px;
@@ -84,3 +84,7 @@ $dd-position: $dt-width + $dt-dd-space;
     @content;
   }
 }
+
+//// custom variables
+
+$max-width: 1300px;

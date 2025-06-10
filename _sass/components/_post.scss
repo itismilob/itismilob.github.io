@@ -1,7 +1,6 @@
 .article-container {
   display: flex;
   justify-content: center;
-  position: relative;
 }
 
 .post-image {
@@ -16,8 +15,12 @@
 
 .post {
   width: 100%;
-  @media (min-width: 1200px) {
-    padding: 0 300px;
+  @media (min-width: $max-width) {
+    padding-left: 300px;
+  }
+
+  & > * {
+    max-width: 607px;
   }
 
   h2,
@@ -55,9 +58,8 @@
 
 // sidebar
 .toc {
-  position: absolute;
-  right: 0;
-  @media (max-width: 1200px) {
+  min-width: 300px;
+  @media (max-width: $max-width) {
     display: none;
   }
 
