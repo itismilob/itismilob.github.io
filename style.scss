@@ -130,7 +130,7 @@ sup {
 hr {
   border: 0;
   border-top: 1px solid $divider-color;
-  margin: 1.5em auto;
+  margin: 1.5em 0;
 }
 
 // Yeun's list style
@@ -251,6 +251,7 @@ blockquote {
 
   p {
     color: $blockquote-color;
+    font-weight: 500;
   }
 
   p:last-child {

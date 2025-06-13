@@ -43,10 +43,18 @@
   display: flex;
   justify-content: center;
 }*/
+.markdown-preview-view {
+  display: flex;
+  justify-content: center;
+}
 
 .cm-sizer,
 .markdown-preview-sizer.markdown-preview-section {
   max-width: 900px;
+  width: 100%;
+}
+.cm-scroller {
+  justify-content: center;
 }
 
 /* .cm-content > *,
@@ -291,9 +299,9 @@ code {
   display: flex;
 }
 .internal-embed.media-embed.image-embed.is-loaded > img {
-  width: 100%;
   border-radius: 10px;
-  box-shadow: 0 0 10px gray;
+  background: #111;
+  box-shadow: 0 0 10px 5px #111;
 }
 
 /* google calendar */
