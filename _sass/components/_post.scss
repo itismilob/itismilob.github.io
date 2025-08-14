@@ -33,9 +33,11 @@
   h2,
   h3,
   h4 {
+    margin-top: 30px;
     padding: 0 10px;
     border-radius: 10px;
     border-bottom: 1px solid #dee2e6;
+    background: linear-gradient(0deg, transparent, #f9f9f9);
   }
   h2 {
     margin-top: 50px;
@@ -55,14 +57,18 @@
   code {
     word-break: break-all;
   }
+
+  p {
+    padding: 0 10px;
+  }
 }
 
 .post-content {
   img {
     width: 100%;
-    max-width: 300px;
-    background: #ddd;
-    box-shadow: 0 0 10px 10px #ddd;
+    // max-width: 300px;
+    background: #eee;
+    box-shadow: 0 0 5px 5px #eee;
     margin: 1em 0;
   }
 }

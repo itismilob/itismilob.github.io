@@ -86,7 +86,7 @@ export default button(){
 
 > 폰트 크기 때문에 글자가 짤리는 문제가 생겼다.
 
-![](/images/posts/gooapp/nickname.png)
+<img src="/images/posts/gooapp/nickname.png" style="max-width:300px"/>
 
 `Pretendard` 폰트를 사용하면서 폰트가 커졌을 때 `g`, `y`, `j` 같은 문자 하단에서 잘렸고, 여백 설정이 필요했다.
 해결을 위해 텍스트 크기에 맞춰 `leading(line-height)`을 조정했다.
@@ -107,8 +107,8 @@ export default button(){
 
 > 기록과 랭킹 화면에서 리스트 스크롤이 사용자 정보를 덮고 위로 올라와야 했다.
 
-![](/images/posts/gooapp/rank1.png)
-![](/images/posts/gooapp/rank2.png)
+<img src="/images/posts/gooapp/rank1.png" style="max-width:300px"/>
+<img src="/images/posts/gooapp/rank2.png" style="max-width:300px"/>
 
 ### 구현
 

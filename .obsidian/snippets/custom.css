@@ -46,6 +46,7 @@
 .markdown-preview-view {
   display: flex;
   justify-content: center;
+  padding-bottom: 100px;
 }
 
 .cm-sizer,
@@ -290,7 +291,8 @@ code {
   overflow-x: scroll;
 }
 .code-styler-line-text {
-  white-space: var(--line-wrapping) !important;
+  /* white-space: var(--line-wrapping) !important; */
+  white-space: pre !important;
 }
 
 /* image */
