@@ -1,0 +1,11 @@
+views:
+  - type: cards
+    name: 뷰
+    filters:
+      and:
+        - file.folder == "_posts"
+    order:
+      - title
+      - tags
+      - description
+    image: note.image

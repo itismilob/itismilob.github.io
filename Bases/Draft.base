@@ -1,0 +1,12 @@
+views:
+  - type: cards
+    name: 뷰
+    filters:
+      and:
+        - file.folder == "Draft"
+    order:
+      - file.name
+      - title
+      - tags
+      - description
+    image: note.image

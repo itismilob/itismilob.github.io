@@ -6,7 +6,7 @@ tags:
   - Tailwindcss
   - 디자인
 description: 디자인을 넣으며 어떤 문제가 있었는가?
-image: /images/logos/tailwind_logo.png
+image: /images/logos/gooapp_logo.png
 comments: true
 ---
 
